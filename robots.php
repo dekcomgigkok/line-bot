@@ -308,14 +308,17 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ สบายดีทุกคนไม่ต้องห่วงเมียร์นะ โฮ่งๆ โฮ่งๆ";
   }
-  
-  $keys11_3 = array('อยู่ไหน','อยู่ที่ไหน');
+
+  $keys11_3 = array('อยู่ไหน', 'อยู่ที่ไหน');
   $texts11_3 = $arrJson['events'][0]['message']['text'];
   if(match($keys11_3, $texts11_3)){
+    $sticker = array("พรีเมียร์ อยู่บ้านทุกวัน ^__^","พรีเมียร์ เฝ้าบ้านให้ป๋า โฮ่งๆ โฮ่งๆ");
+    $random_keys=array_rand($sticker);
+
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "พรีเมียร์ อยู่บ้านทุกวันพรีเมียร์เฝ้าบ้านให้ป๋า โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
   /*------------------------*/
   /* lotto */
