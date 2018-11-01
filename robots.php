@@ -299,6 +299,15 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ นอนเล่นเฉยๆ แต่ก็เริ่มหิว เหมือนกันนะ โฮ่งๆ โฮ่งๆ";
   }
+  
+  $keys11_2 = array('สบายดีมั้ย','สบายดีไหม','เป็นยังไงบ้าง');
+  $texts11_2 = $arrJson['events'][0]['message']['text'];
+  if(match($keys11_2, $texts11_2)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "พรีเมียร์ สบายดีทุกคนไม่ต้องห่วงเมียร์นะ โฮ่งๆ โฮ่งๆ";
+  }
   /*------------------------*/
   /* lotto */
   /*------------------------*/
