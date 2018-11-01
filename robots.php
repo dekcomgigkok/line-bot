@@ -262,6 +262,16 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
     $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
   }
+  
+  $keys9_1 = array('อย่าเพิ่งนอน', 'อย่าพึ่งนอน');
+  $texts9_1 = $arrJson['events'][0]['message']['text'];
+  if(match($keys9_1, $texts9_1)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "image";
+    $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/sleep.jpg";
+    $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/sleep.jpg";
+  }
 
   $keys99 = array('ยุบ้านกะ','อยู่บ้านกับ');
   $texts99 = $arrJson['events'][0]['message']['text'];
