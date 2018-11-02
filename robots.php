@@ -180,7 +180,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "กินแล้ว แล้วพี่กินหรือยัง? โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = "กินแล้ว แล้วป๊ากินหรือยัง? โฮ่งๆ โฮ่งๆ";
   }
 
   $keys5 = array('ชอบกินอะไร', 'ชอบกินไร');
@@ -298,7 +298,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "พรีเมียร์ คิดถึงพี่ไง โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = "พรีเมียร์ คิดถึงป๊าไง โฮ่งๆ โฮ่งๆ";
   }
 
   $keys11_1 = array('ทำไร', 'ทำอะไร');
