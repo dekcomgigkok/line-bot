@@ -53,7 +53,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   $keys2 = array('เมียร์', 'พรีเมียร์');
   $texts2 = $arrJson['events'][0]['message']['text'];
   if(match($keys2, $texts2)){
-    $sticker = array("จ๋า โฮ่ง โฮ่ง","พรีเมียร์อยู่นี่แล้ว","เรียกอยู่นั้นแหละหมาจะนอน","โฮ่ง โฮ่ง โฮ่ง");
+    $sticker = array("จ๋า โฮ่ง โฮ่ง","พรีเมียร์อยู่นี่แล้ว","คร่อกก ฟี๊~~!","โฮ่ง โฮ่ง โฮ่ง");
     $random_keys=array_rand($sticker);
 
     $arrPostData = array();
@@ -333,13 +333,13 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   /*------------------------*/
   /* lotto */
   /*------------------------*/
-  $keys_lotto = array('ขอหวย','บอกหวยหน่อย');
+  $keys_lotto = array('ขอหวย','บอกหวยหน่อย','ขอหวยหน่อย','บอกหวย');
   $texts_lotto = $arrJson['events'][0]['message']['text'];
   if(match($keys_lotto, $texts_lotto)){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "อยากได้เลขท้าย 2 ตัว หรือเลขท้าย 3 ตัว";
+    $arrPostData['messages'][0]['text'] = "อยากได้เลขท้าย 2 ตัว, เลขท้าย 3 ตัว หรือ เลขท้าย 4 ตัว";
   }
 
   $number_lotto2 = '1234567890';
@@ -362,6 +362,17 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "เลขท้าย 3 ตัว ".substr($shuffled_lotto3 ,0,3);
+  }
+  
+  $number_lotto4 = '1234567890';
+  $shuffled_lotto4 = str_shuffle($number_lotto4);
+  $keys_lotto4 = array('ขอหวย 4 ตัว','ขอหวยหน่อย 4 ตัว','บอกหวยหน่อย 4 ตัว','บอกหวย 4 ตัว','เลขท้าย 4 ตัว','ขอหวย4ตัว','ขอหวยหน่อย4ตัว','บอกหวยหน่อย4ตัว','บอกหวย4ตัว','เลขท้าย4ตัว');
+  $texts_lotto4 = $arrJson['events'][0]['message']['text'];
+  if(match($keys_lotto4, $texts_lotto4)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เลขท้าย 4 ตัว ".substr($shuffled_lotto4 ,0,4);
   }
 
   /*------------------------*/
